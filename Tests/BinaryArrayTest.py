@@ -1,0 +1,108 @@
+##  USER：测试BinaryArray的功能
+from Math.BinaryArray import BinaryArray as ba
+
+
+if __name__ == '__main__':
+    ##  构造方法
+    array_0=ba([[1,0,1,0,1,0,1],[0,0,0,1,1,1,1]])
+    array_1=ba([[0,1,1,0,0,1,1],[0,1,1,1,1,0,0]])
+    vector=ba([1,0,1,1,0,1,0])
+    coff=ba([1,1])
+    print('第一个矩阵A')
+    print(array_0)
+    print('第二个矩阵B')
+    print(array_1)
+    print('向量b')
+    print(vector)
+    print('系数向量x')
+    print(coff)
+
+    ##  属性
+    print('A的形状')
+    print(array_0.shape)
+    print('B的形状')
+    print(array_1.shape)
+    print('b的形状')
+    print(vector.shape)
+    print('x的形状')
+    print(coff.shape)
+
+    ##  重载运算符
+    print('测试加法A+B')
+    print(array_1+array_0)
+    print('测试减法A-B')
+    print(array_0-array_1)
+    print('测试圆乘法AB')
+    print(array_0*array_1)
+    print('测试矩阵乘法Ab=')
+    print(array_0@vector)
+    print('测试数乘1A=')
+    print(1*array_0)
+    print('测试数乘0A=')
+    print(0*array_0)
+    print('测试长度len(A)=')
+    print(len(array_0))
+    print('测试取值A[0,0]')
+    print(array_0[0,0])
+    print('测试赋值A[0,0]=0')
+    array_0[0,0]=0
+    print(array_0)
+    array_0[0,0]=1
+    s=ba([[0,1],[1,0]])
+    print('方矩阵S',s)
+    print('测试矩阵幂S^2')
+    print(s**2)
+
+    ##  属性方法
+    print('测试秩rank(A)=')
+    print(array_0.rank)
+    print('测试零空间null(A)=')
+    print(array_0.null_space)
+    print('测试占据occupy(A)=')
+    print(array_0.occupy)
+    print('测试权重wt(A)=')
+    print(array_0.weight)
+    print('测试转置A^T=')
+    print(array_0.T)
+
+    ##  对象方法
+    print('测试复制函数A.copy()，不允许是浅复制')
+    array_test=array_0.copy()
+    array_test[0,0]=0
+    print(array_test)
+    print(array_0)
+
+    ##  静态方法
+    print('测试求和A+B=')
+    print(ba.sum([array_0,array_1]))
+    print('测试水平拼接[A|B]')
+    print(ba.hstack(array_0,array_1))
+    print('测试竖直拼接[A;B]')
+    print(ba.vstack(array_0,array_1))
+    print('测试解方程组xA=b')
+    print(ba.solve(array_0,vector))
+    print('测试集合交A∩B')
+    print(ba.cap(array_0,array_1))
+    print('测试集合差A-B')
+    print(ba.cap(array_0,array_1))
+    print('测试集合差B-A')
+    print(ba.cap(array_1,array_0))
+    print('测试集合直和')
+    print(ba.direct_sum(array_1,array_0))
+    print('测试集合正交化')
+    pass
+    print('测试集合直积A×B')
+    print(ba.kron(array_0,array_1))
+    print('测试Steane code距离')
+    print(ba.distance(ba.direct_sum(array_1,array_0),'mip'))
+    print(ba.distance(ba.direct_sum(array_1,array_0),'random'))
+    print('测试从占据生成')
+    print(ba.FromOccupy([0,1,4],5))
+    print('测试生成全零数组')
+    print(ba.zeros(5))
+    print('测试生成单位矩阵')
+    print(ba.eye(5))
+    print('测试生成位移循环矩阵')
+    print(ba.shift(5,1))
+    print('测试生成全一数组')
+    print(ba.ones(5))

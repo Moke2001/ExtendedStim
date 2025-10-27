@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "extendedstim"
+version = "0.1.0"
+description = "ExtendedStim: tools for testing quantum circuits, quantum error-correction codes."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [ { name = "Moke", email = "moke2001@whu.edu.cn" } ]
+keywords = ["quantum physics", "quantum error-correction codes", "physics", "quantum circuits"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent"
+]
+requires-python = ">=3.12"
+dependencies = ["qiskit", "numpy", "stim", "scipy", "matplotlib","stimbposd","pylatexenc","qutip","galois"]
+
+[project.urls]
+"Homepage" = "https://github.com/Moke2001/ExtendedStim"
+"Source" = "https://github.com/Moke2001/ExtendedStim"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["extendedstim*"]
