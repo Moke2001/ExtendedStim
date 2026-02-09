@@ -25,49 +25,23 @@ Optional:
 
 [tesseract-decoder](https://github.com/quantumlib/tesseract-decoder) - Tesseract decoder; if not installed, Stimbposd is used instead.
 
-## 📁 2 Project Structure
+## 📖 2 Basic Workflow
 
-├── extendedstim/               # Core code directory 
-│   ├── Circuit/                # Quantum circuit modules 
-│   │   └── Circuit.py          # Quantum circuit implementation 
-│   ├── Code/                   # Quantum codes and linear codes 
-│   │   ├── LinearCode/         # Linear code implementation 
-│   │   │   ├── BicycleCode.py  # Bicycle code implementation 
-│   │   │   └── LinearCode.py   # Linear code base class 
-│   │   ├── QuantumCode/        # Quantum code implementation 
-│   │   │   ├── LatticeSurgery.py      # Lattice surgery 
-│   │   │   ├── MajoranaCSSCode.py     # Majorana CSS code 
-│   │   │   ├── MajoranaCode.py        # Majorana code 
-│   │   │   ├── PauliCSSCode.py        # Pauli CSS code 
-│   │   │   ├── PauliCode.py           # Pauli code 
-│   │   │   ├── QuantumCSSCode.py      # Quantum CSS code 
-│   │   └── └── QuantumCode.py         # Quantum code base class 
-│   └── Physics/                # Physics operation modules 
-│   │   ├── MajoranaOperator.py # Majorana operators 
-│   │   ├── Operator.py         # Operator base class 
-│   │   └── PauliOperator.py    # Pauli operators 
-│   └── init.py             # Module initialization 
-├── .git/                       # Git version control 
-├── .idea/                      # IDE config files 
-└── README.md                   # Project documentation
-
-## 📖 3 Basic Workflow
-
-### 3.1 Compute code parameters
+### 2.1 Compute code parameters
 
 1. Construct a quantum error-correcting code
 2. Compute the code parameters of the quantum error-correcting code
 
-### 3.2 Compute logical error rate
+### 2.2 Compute logical error rate
 
 1. Construct a quantum circuit
 2. Run Monte Carlo simulations and compare predicted correctness to obtain the logical error rate
 
-## 📄 4 License
+## 📄 3 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📞 5 Contact
+## 📞 4 Contact
 
 - **Author**: Moke
 - **Email**: Moke2001@whu.edu.cn
