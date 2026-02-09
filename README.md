@@ -1,0 +1,75 @@
+# ExtendedStim: A Python Package Addressing both Fermionic and Bosonic Quantum Error Correction Simultaneously
+
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.12%2B-blue)](https://www.python.org/)
+[![Documentation](https://img.shields.io/badge/docs-available-brightgreen)](docs/)
+
+This program is developed with Python 3.12+ and is mainly used for constructing and testing quantum error-correcting codes and quantum circuits.
+
+## 🔨 1 Project Dependencies
+
+Required:
+
+- [QuTiP](https://qutip.org/) - Quantum toolbox
+- [Stim](https://github.com/quantumlib/Stim) - Quantum error-correction simulator
+- [Stimbposd](https://github.com/quantumlib/Stim/blob/main/docs/bposd.md) - Stim-based BPOSD decoder
+- [Galois](https://galois.readthedocs.io/) - Algebra over $\mathbb{F}_2$
+- [NumPy](https://numpy.org/) - Numerical computing library
+- [SciPy](https://scipy.org/) - Scientific computing library
+- [Matplotlib](https://matplotlib.org/) - Plotting library
+- [Qiskit](https://qiskit.org/) - Quantum circuit drawing
+- [Mip](https://www.mipengine.org/) - Integer programming solver for computing code distance
+
+Optional:
+
+[tesseract-decoder](https://github.com/quantumlib/tesseract-decoder) - Tesseract decoder; if not installed, Stimbposd is used instead.
+
+## 📁 2 Project Structure
+
+├── extendedstim/               # Core code directory 
+│   ├── Circuit/                # Quantum circuit modules 
+│   │   └── Circuit.py          # Quantum circuit implementation 
+│   ├── Code/                   # Quantum codes and linear codes 
+│   │   ├── LinearCode/         # Linear code implementation 
+│   │   │   ├── BicycleCode.py  # Bicycle code implementation 
+│   │   │   └── LinearCode.py   # Linear code base class 
+│   │   ├── QuantumCode/        # Quantum code implementation 
+│   │   │   ├── LatticeSurgery.py      # Lattice surgery 
+│   │   │   ├── MajoranaCSSCode.py     # Majorana CSS code 
+│   │   │   ├── MajoranaCode.py        # Majorana code 
+│   │   │   ├── PauliCSSCode.py        # Pauli CSS code 
+│   │   │   ├── PauliCode.py           # Pauli code 
+│   │   │   ├── QuantumCSSCode.py      # Quantum CSS code 
+│   │   └── └── QuantumCode.py         # Quantum code base class 
+│   └── Physics/                # Physics operation modules 
+│   │   ├── MajoranaOperator.py # Majorana operators 
+│   │   ├── Operator.py         # Operator base class 
+│   │   └── PauliOperator.py    # Pauli operators 
+│   └── init.py             # Module initialization 
+├── .git/                       # Git version control 
+├── .idea/                      # IDE config files 
+└── README.md                   # Project documentation
+
+## 📖 3 Basic Workflow
+
+### 3.1 Compute code parameters
+
+1. Construct a quantum error-correcting code
+2. Compute the code parameters of the quantum error-correcting code
+
+### 3.2 Compute logical error rate
+
+1. Construct a quantum circuit
+2. Run Monte Carlo simulations and compare predicted correctness to obtain the logical error rate
+
+## 📄 4 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📞 5 Contact
+
+- **Author**: Moke
+- **Email**: Moke2001@whu.edu.cn
+- **Address**: Room S219, Meng Minwei Science and Technology Building, Tsinghua University, Haidian District, Beijing
+- **Phone**: +86 130-3373-6868

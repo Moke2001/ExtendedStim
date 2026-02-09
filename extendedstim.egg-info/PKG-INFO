@@ -1,0 +1,127 @@
+Metadata-Version: 2.4
+Name: extendedstim
+Version: 1.2.5
+Summary: ExtendedStim: tools for testing quantum circuits, quantum error-correction codes.
+Author-email: Moke <Moke2001@whu.edu.cn>
+License: MIT License
+        
+        Copyright (c) 2025 Your Name
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+        
+Project-URL: Homepage, https://github.com/Moke2001/ExtendedStim
+Project-URL: Source, https://github.com/Moke2001/ExtendedStim
+Keywords: quantum physics,quantum error-correction codes,physics,quantum circuits
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: qiskit
+Requires-Dist: numpy
+Requires-Dist: stim
+Requires-Dist: scipy
+Requires-Dist: matplotlib
+Requires-Dist: stimbposd
+Requires-Dist: pylatexenc
+Requires-Dist: qutip
+Requires-Dist: galois
+Requires-Dist: mip
+Requires-Dist: networkx
+Dynamic: license-file
+
+# ExtendedStim: A Python Package Addressing both Fermionic and Bosonic Quantum Error-Correction Simultaneously
+
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.12%2B-blue)](https://www.python.org/)
+[![Documentation](https://img.shields.io/badge/docs-available-brightgreen)](docs/)
+
+本程序基于Python 3.12+开发，主要用于量子纠错码和量子线路的构造与测试。
+
+## 🔨 1 项目依赖
+
+必选项：
+
+- [QuTiP](https://qutip.org/) - 量子工具包
+- [Stim](https://github.com/quantumlib/Stim) - 量子纠错模拟器
+- [Stimbposd](https://github.com/quantumlib/Stim/blob/main/docs/bposd.md) - 基于Stim的BPOSD译码器
+- [Galois](https://galois.readthedocs.io/) - 提供$\mathbb{F}_2$上的代数计算
+- [NumPy](https://numpy.org/) - 数值计算库
+- [SciPy](https://scipy.org/) - 科学计算库
+- [Matplotlib](https://matplotlib.org/) - 绘图库
+- [Qiskit](https://qiskit.org/) - 提供量子线路图的绘制
+- [Mip](https://www.mipengine.org/) - 整数规划求解器，用于code distance的计算
+
+可选项：
+
+[tesseract-decoder](https://github.com/quantumlib/tesseract-decoder) - Tesseract译码器，如果没有安装会用Stimbposd译码器替代。
+
+## 📁 2 项目结构
+
+```
+├── extendedstim/               # 核心代码目录
+│   ├── Circuit/                # 量子线路相关模块
+│   │   └── Circuit.py          # 量子线路实现
+│   ├── Code/                   # 量子码和线性码模块
+│   │   ├── LinearCode/         # 线性码实现
+│   │   │   ├── BicycleCode.py  # 自行车码实现
+│   │   │   └── LinearCode.py   # 线性码基类
+│   │   ├── QuantumCode/        # 量子码实现
+│   │   │   ├── LatticeSurgery.py      # 格点手术
+│   │   │   ├── MajoranaCSSCode.py     # Majorana CSS码
+│   │   │   ├── MajoranaCode.py        # Majorana码
+│   │   │   ├── PauliCSSCode.py        # Pauli CSS码
+│   │   │   ├── PauliCode.py           # Pauli码
+│   │   │   ├── QuantumCSSCode.py      # 量子CSS码
+│   │   └── └── QuantumCode.py         # 量子码基类
+│   └── Physics/                # 物理操作模块
+│   │   ├── MajoranaOperator.py # Majorana算符
+│   │   ├── Operator.py         # 算符基类
+│   │   └── PauliOperator.py    # Pauli算符
+│   └── __init__.py             # 模块初始化文件
+├── .git/                       # Git版本控制
+├── .idea/                      # IDE配置文件
+└── README.md                   # 项目说明文档
+```
+
+## 📖 3 基本工作流
+
+### 3.1 计算code parameters
+
+1. 构造量子纠错码
+2. 计算量子纠错码的code parameters
+
+### 3.2 计算logical error rate
+
+1. 构造量子线路
+2. 执行Monte-Carlo模拟，对比预测正确与否得到logical error rate
+
+## 📄 4 许可证
+
+本项目采用MIT许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+
+## 📞 5 联系方式
+
+- **作者**: Moke
+- **邮箱**: Moke2001@whu.edu.cn
+- **地址**: 北京市海淀区清华大学蒙民伟科技楼S219
+- **电话**: +86 130-3373-6868
