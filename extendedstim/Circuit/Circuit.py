@@ -601,7 +601,10 @@ class Circuit:
 
             ##  执行误差门
             elif name =='M_ERROR':
-                p: float=gate['p']
+                if designated_noise_index is None:
+                    p: float=gate['p']
+                else:
+                    p=1.1
                 if np.random.rand()<p:
                     measurement_sample[flag_measurement-1]=-measurement_sample[flag_measurement-1]
 
